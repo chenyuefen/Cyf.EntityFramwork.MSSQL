@@ -13,12 +13,13 @@ namespace Ruanmou.Project
     {
         public static void Show()
         {
-            #region 其他查询
+            #region 基本查询语句
             using (JDDbContext dbContext = new JDDbContext())
             {
                 //dbContext.Database.Log += c => Console.WriteLine($"sql：{c}");
                 {
-                    var list = dbContext.Users.Where(u => new int[] { 1, 2, 3, 5, 7, 8, 9, 10, 11, 12, 14, 17 }.Contains(u.Id));//in查询
+                    //in查询
+                    var list = dbContext.Users.Where(u => new int[] { 1, 2, 3, 5, 7, 8, 9, 10, 11, 12, 14, 17 }.Contains(u.Id));
                     foreach (var user in list)
                     {
                         Console.WriteLine(user.Name);
@@ -36,6 +37,7 @@ namespace Ruanmou.Project
                     }
                 }
                 {
+                    //in + 分页查询
                     var list = dbContext.Users.Where(u => new int[] { 1, 2, 3, 5, 7, 8, 9, 10, 11, 12, 14, 18, 19, 20, 21, 22, 23 }.Contains(u.Id))
                                               .OrderBy(u => u.Id)
                                               .Select(u => new
@@ -77,6 +79,7 @@ namespace Ruanmou.Project
                     }
                 }
                 {
+                    //join查询
                     var list = from u in dbContext.Users
                                join c in dbContext.Companies on u.CompanyId equals c.Id
                                where new int[] { 1, 2, 3, 4, 6, 7, 10 }.Contains(u.Id)
@@ -92,10 +95,11 @@ namespace Ruanmou.Project
                     }
                 }
                 {
+                    //join左右链接查询
                     var list = from u in dbContext.Users
                                join c in dbContext.Categories on u.CompanyId equals c.Id
                                into ucList
-                               from uc in ucList.DefaultIfEmpty()
+                               from uc in ucList.DefaultIfEmpty()//为空的补充默认值
                                where new int[] { 1, 2, 3, 4, 6, 7, 10 }.Contains(u.Id)
                                select new
                                {
@@ -111,6 +115,7 @@ namespace Ruanmou.Project
             using (JDDbContext dbContext = new JDDbContext())
             {
                 {
+                    //事务操作
                     DbContextTransaction trans = null;
                     try
                     {
