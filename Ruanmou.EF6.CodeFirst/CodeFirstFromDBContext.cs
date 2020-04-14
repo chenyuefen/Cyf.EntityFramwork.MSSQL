@@ -63,11 +63,12 @@ namespace Ruanmou.EF6.CodeFirst
             //对不起  数据都没了。。   测试/快速部署  其实这里还可以完成数据初始化
             //请一定小心
 
-
+            //OnModelCreating完成链式映射
             modelBuilder.Entity<JDCommodity002>()
                 .ToTable("JD_Commodity_002")
                 .Property(c => c.Text).HasColumnName("Title");
 
+            //映射类文件
             modelBuilder.Configurations.Add(new JDCommodity003Mapping());
 
             modelBuilder.Entity<Category>()

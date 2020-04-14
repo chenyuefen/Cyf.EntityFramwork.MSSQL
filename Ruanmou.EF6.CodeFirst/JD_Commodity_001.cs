@@ -7,6 +7,7 @@ namespace Ruanmou.EF6.CodeFirst
     using System.Data.Entity.Spatial;
 
     //JD_Commodity_001
+    //特性映射
     [Table("JD_Commodity_001")]
     public partial class JDCommodity001
     {
@@ -17,6 +18,7 @@ namespace Ruanmou.EF6.CodeFirst
         public int? CategoryId { get; set; }
 
         [StringLength(500)]
+        //特性映射
         [Column("Title")]
         public string Text { get; set; }
 

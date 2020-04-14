@@ -27,6 +27,7 @@ namespace Ruanmou.EF6.CodeFirst
         public string ImageUrl { get; set; }
     }
 
+    //Ó³ÉäÀàÎÄ¼ş
     public class JDCommodity003Mapping : EntityTypeConfiguration<JDCommodity003>
     {
         public JDCommodity003Mapping()
