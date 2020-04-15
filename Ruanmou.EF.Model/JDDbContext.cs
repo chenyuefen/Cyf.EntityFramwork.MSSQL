@@ -10,6 +10,7 @@ namespace Ruanmou.EF.Model
         public JDDbContext()
             : base("name=JDDbContext")
         {
+            //Êä³ösqlÓï¾ä¼ÇÂ¼
             this.Database.Log += c => Console.WriteLine($"sql£º{c}");
         }
         public virtual DbSet<Category> Categories { get; set; }
