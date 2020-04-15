@@ -35,6 +35,11 @@ namespace Ruanmou.Project
             //    Password = "12356789",
             //    UserType = 1
             //};
+            //5个context操作状态
+            //Detached—无关联
+            //Added—添加
+            //Modified—修改
+            //Deleted—删除
             //using (JDDbContext context = new JDDbContext())
             //{
             //    Console.WriteLine(context.Entry<User>(userNew).State);//实体跟context没关系 Detached
