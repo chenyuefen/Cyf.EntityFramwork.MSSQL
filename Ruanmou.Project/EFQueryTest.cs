@@ -141,6 +141,7 @@ namespace Ruanmou.Project
                     try
                     {
                         trans = dbContext.Database.BeginTransaction();
+                        //执行sql语句
                         string sql = "SELECT * FROM [User] WHERE Id=@Id";
                         SqlParameter parameter = new SqlParameter("@Id", 1);
                         List<User> userList = dbContext.Database.SqlQuery<User>(sql, parameter).ToList<User>();
