@@ -86,6 +86,7 @@ namespace Ruanmou.Project
             //    user.Name = "滑猪小板123456789";
             //    using (JDDbContext context = new JDDbContext())
             //    {
+            //        //不同centext操作同一个实体时增加Attach监听
             //        context.Users.Attach(user);
             //        Console.WriteLine(context.Entry<User>(user).State);
 
