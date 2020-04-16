@@ -9,6 +9,9 @@ namespace Ruanmou.Project
 {
     public class ContextLifetimeTest
     {
+        /// <summary>
+        /// Context生命周期，看Region即可
+        /// </summary>
         public static void Show()
         {
             #region 多个数据修改，一次SaveChange,开始事务保存
