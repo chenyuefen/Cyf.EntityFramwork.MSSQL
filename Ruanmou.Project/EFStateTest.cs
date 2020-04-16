@@ -133,7 +133,7 @@ namespace Ruanmou.Project
                 //AsNoTracking() 如果数据不会更新，加一个可以提升性能
                 using (JDDbContext context = new JDDbContext())
                 {
-                    var userList = context.Users.Where(u => u.Id > 10).ToList();//context会监听数据
+                    var userList = context.Users.Where(u => u.Id > 10).ToList();//context会监听数据，比较耗内存，用完应该尽快释放掉
                     //var userList = context.Users.Where(u => u.Id > 10).AsNoTracking().ToList();//如果数据不会更新，可以加AsNoTracking()取消监听，提升性能
                     Console.WriteLine(context.Entry<User>(userList[3]).State);
                     Console.WriteLine("*********************************************");
@@ -164,7 +164,7 @@ namespace Ruanmou.Project
                     //传递json--主键：值，更改属性：值--来解读赋值
 
                     //var user5 = context.Users.Find(5);
-                    //context.Entry<User>(user5).Property("Name").IsModified = true;//指定某字段被改过
+                    //context.Entry<User>(user5).Property("Name").IsModified = true;//指定某字段被改过/不修改某字段
                 }
             }
         }
