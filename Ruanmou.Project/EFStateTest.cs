@@ -128,10 +128,13 @@ namespace Ruanmou.Project
             //    //}
             //}
             {
+                //Find可以使用缓存，优先从内存查找(限于context)
+                //但是linq时不能用缓存，每次都是要查询的
+                //AsNoTracking() 如果数据不会更新，加一个可以提升性能
                 using (JDDbContext context = new JDDbContext())
                 {
-                    var userList = context.Users.Where(u => u.Id > 10).ToList();
-                    //var userList = context.Users.Where(u => u.Id > 10).AsNoTracking().ToList();
+                    var userList = context.Users.Where(u => u.Id > 10).ToList();//context会监听数据
+                    //var userList = context.Users.Where(u => u.Id > 10).AsNoTracking().ToList();//如果数据不会更新，可以加AsNoTracking()取消监听，提升性能
                     Console.WriteLine(context.Entry<User>(userList[3]).State);
                     Console.WriteLine("*********************************************");
                     var user5 = context.Users.Find(5);
@@ -144,9 +147,6 @@ namespace Ruanmou.Project
                     Console.WriteLine("*********************************************");
                     var user4 = context.Users.FirstOrDefault(u => u.Id == 30);
                 }
-                //Find可以使用缓存，优先从内存查找(限于context)
-                //但是linq时不能用缓存，每次都是要查询的
-                //AsNoTracking() 如果数据不会更新，加一个可以提升性能
             }
             {
                 //按需更新--只更新修改过的字段
