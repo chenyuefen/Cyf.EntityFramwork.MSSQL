@@ -71,8 +71,8 @@ namespace Ruanmou.Project
             //    foreach (var company in companyList)//只查company
             //    {
             //        Console.WriteLine(company.Name);
-            //        dbContext.Entry<Company>(company).Collection(c => c.Users).Load();
-            //        //dbContext.Entry<Company>(company).Reference(c => c.Users).Load();
+            //        dbContext.Entry<Company>(company).Collection(c => c.Users).Load();//关闭延迟查询，又需要字表数据，加载集合
+            //        //dbContext.Entry<Company>(company).Reference(c => c.Users).Load();//加载单体
             //        foreach (var user in company.Users)//再去查用户
             //        {
             //            Console.WriteLine(user.Name);
