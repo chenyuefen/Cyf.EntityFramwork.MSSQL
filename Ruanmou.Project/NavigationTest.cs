@@ -10,6 +10,7 @@ namespace Ruanmou.Project
 {
     public class NavigationTest
     {
+        //导航属性查询，主外键表及字表，Include属性可预加载，关闭延迟加载，子表数据就没了
         public static void ShowQuery()
         {
             //一般来说，主外键表，主表有个子表的集合，导航属性
