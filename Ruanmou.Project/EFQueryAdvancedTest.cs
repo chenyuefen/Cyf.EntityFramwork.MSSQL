@@ -21,6 +21,7 @@ namespace Ruanmou.Project
     {
         public static void Show()
         {
+            //延迟查询
             //IQueryable<User> sources = null;
             //using (JDDbContext dbContext = new JDDbContext())
             //{
