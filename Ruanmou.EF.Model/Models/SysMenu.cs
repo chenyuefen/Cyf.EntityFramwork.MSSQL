@@ -45,6 +45,7 @@ namespace Ruanmou.EF.Model
 
         public int? LastModifierId { get; set; }
 
+        //非主外键 也可以导航属性
         public virtual ICollection<SysRoleMenuMapping> SysRoleMenuMappingList { get; set; }
     }
 }

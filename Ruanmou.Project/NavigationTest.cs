@@ -81,6 +81,7 @@ namespace Ruanmou.Project
             //}
             //我觉得，其实导航属性的东西，自己join也是可以搞定的
 
+
             //非主外键 也可以导航属性
             using (JDDbContext dbContext = new JDDbContext())
             {
