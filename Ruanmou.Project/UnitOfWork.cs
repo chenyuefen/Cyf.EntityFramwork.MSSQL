@@ -7,6 +7,9 @@ using System.Transactions;
 
 namespace Ruanmou.Project
 {
+    /// <summary>
+    /// 事务UnitOfWork
+    /// </summary>
     public class UnitOfWork
     {
         public static void Invoke(Action action)
