@@ -115,7 +115,7 @@ namespace Ruanmou.Project
             using (JDDbContext dbContext = new JDDbContext())
             {
                 {
-                    //事务操作
+                    //事务操作—另一种事务操作
                     DbContextTransaction trans = null;
                     try
                     {
