@@ -280,7 +280,7 @@ namespace Ruanmou.Project
             #endregion
 
 
-            #region MyRegion
+            #region TransactionScope完成不同context实例的事务
             using (JDDbContext dbContext1 = new JDDbContext())
             using (JDDbContext dbContext2 = new JDDbContext())
             {
