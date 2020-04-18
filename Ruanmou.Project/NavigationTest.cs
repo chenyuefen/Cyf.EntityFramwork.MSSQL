@@ -235,7 +235,7 @@ namespace Ruanmou.Project
             //}
             #endregion
 
-            #region MyRegion
+            #region 解决事务问题
             //using (JDDbContext dbContext = new JDDbContext())
             //{
             //    using (TransactionScope trans = new TransactionScope())
